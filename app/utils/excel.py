@@ -41,5 +41,7 @@ def save_to_excel(sheet_name: str, headers: list, row_data: list):
         safe_row = [str(v) if v is not None else "" for v in row_data]
         ws.append_row(safe_row, value_input_option="USER_ENTERED")
     except Exception as e:
-        print("Google Sheets Error:", e)
+        import traceback
+        print("Google Sheets Error:", str(e))
+        print("Full traceback:", traceback.format_exc())
         raise
