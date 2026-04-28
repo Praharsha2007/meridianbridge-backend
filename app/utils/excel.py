@@ -8,10 +8,11 @@ SCOPES = [
     "https://www.googleapis.com/auth/drive"
 ]
 
-SHEET_ID = os.environ.get("GOOGLE_SHEET_ID")
+
 
 
 def _get_sheet(sheet_name: str, headers: list):
+    SHEET_ID = os.environ.get("GOOGLE_SHEET_ID")
     # Production (Railway): read from GOOGLE_CREDS_JSON env variable
     # Local development: read from service_account.json file
     creds_json = os.environ.get("GOOGLE_CREDS_JSON")
