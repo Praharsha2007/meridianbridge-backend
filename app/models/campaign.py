@@ -9,7 +9,7 @@ class Campaign(db.Model):
     platform = db.Column(db.String(50))
     languages = db.Column(db.JSON)
 
-    budget = db.Column(db.Integer)
+    budget = db.Column(db.String(100))  # changed from Integer to String
     follower_range = db.Column(db.String(50))
 
     status = db.Column(db.String(50), default="active")
