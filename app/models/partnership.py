@@ -5,7 +5,7 @@ class Partnership(db.Model):
     influencer_id = db.Column(db.Integer, db.ForeignKey("influencer_profile.id"))
 
     experience = db.Column(db.String(50))  # none / occasional / regular
-    fee = db.Column(db.Integer)
+    fee = db.Column(db.String(100))
 
     categories = db.Column(db.JSON)  # ["Fashion", "Tech"]
     long_term = db.Column(db.Boolean)
