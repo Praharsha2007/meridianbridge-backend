@@ -3,8 +3,7 @@ from datetime import datetime
 
 class Campaign(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    brand_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
-
+    brand_id = db.Column(db.Integer, nullable=False)
     goal = db.Column(db.String(100))
     platform = db.Column(db.String(50))
     languages = db.Column(db.JSON)
