@@ -25,7 +25,11 @@ def create_app(config_class="app.config.DevelopmentConfig"):
     bcrypt.init_app(app)
     from flask_cors import CORS
 
-    CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+    CORS(app, resources={r"/*": {"origins": [
+    "https://meridianbridge.co.in",
+    "https://www.meridianbridge.co.in",
+    "https://meridianbridge-frontend.vercel.app"
+]}}, supports_credentials=True)
     # ✅ Import ONCE
     from app.routes.auth_routes import auth_bp
     from app.routes.brand_routes import brand_bp
